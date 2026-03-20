@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "configVersion": "2026.03.20.1",
+  "generatedAt": "2026-03-20T12:00:00+08:00",
+  "ttlSeconds": 86400,
+  "defaults": {
+    "defaultServerId": "cloudflare-global",
+    "defaultUploadSizeMB": 20,
+    "fallbackPolicy": "cache_then_builtin"
+  },
+  "servers": [
+    {
+      "id": "cloudflare-global",
+      "name": "Cloudflare Global",
+      "provider": "Cloudflare",
+      "regionCode": "GLOBAL",
+      "city": "Anycast Edge",
+      "countryCode": "GLOBAL",
+      "priority": 10,
+      "enabled": true,
+      "supportsDownload": true,
+      "supportsUpload": true,
+      "download": {
+        "url": "https://speed.cloudflare.com/__down?bytes=100000000",
+        "method": "GET",
+        "timeoutSeconds": 30
+      },
+      "upload": {
+        "url": "https://speed.cloudflare.com/__up",
+        "method": "POST",
+        "payloadBytes": 20971520,
+        "timeoutSeconds": 30
+      },
+      "notes": "Official public speed test API. Recommended as the default bidirectional test node.",
+      "referenceURL": "https://github.com/cloudflare/speedtest"
+    },
+    {
+      "id": "leaseweb-tyo11",
+      "name": "Leaseweb Tokyo TYO-11",
+      "provider": "Leaseweb",
+      "regionCode": "TYO-11",
+      "city": "Tokyo",
+      "countryCode": "JP",
+      "priority": 20,
+      "enabled": true,
+      "supportsDownload": true,
+      "supportsUpload": false,
+      "download": {
+        "url": "https://speedtest.tyo11.jp.leaseweb.net/100mb.bin",
+        "method": "GET",
+        "timeoutSeconds": 30
+      },
+      "notes": "Official public download test file. Suitable as an East Asia download-only node.",
+      "referenceURL": "https://kb.leaseweb.com/kb/network/network-link-speeds/"
+    },
+    {
+      "id": "leaseweb-sin1",
+      "name": "Leaseweb Singapore SIN-01",
+      "provider": "Leaseweb",
+      "regionCode": "SIN-01",
+      "city": "Singapore",
+      "countryCode": "SG",
+      "priority": 30,
+      "enabled": true,
+      "supportsDownload": true,
+      "supportsUpload": false,
+      "download": {
+        "url": "https://speedtest.sin1.sg.leaseweb.net/100mb.bin",
+        "method": "GET",
+        "timeoutSeconds": 30
+      },
+      "notes": "Official public download test file. Suitable as a Southeast Asia download-only node.",
+      "referenceURL": "https://kb.leaseweb.com/kb/network/network-link-speeds/"
+    },
+    {
+      "id": "hetzner-fsn1",
+      "name": "Hetzner Falkenstein FSN1",
+      "provider": "Hetzner",
+      "regionCode": "FSN1",
+      "city": "Falkenstein",
+      "countryCode": "DE",
+      "priority": 40,
+      "enabled": true,
+      "supportsDownload": true,
+      "supportsUpload": false,
+      "download": {
+        "url": "https://fsn1-speed.hetzner.com/100MB.bin",
+        "method": "GET",
+        "timeoutSeconds": 30
+      },
+      "notes": "Official public test file. Suitable as a Europe download-only node.",
+      "referenceURL": "https://fsn1-speed.hetzner.com/"
+    },
+    {
+      "id": "ovh-proof-static",
+      "name": "OVHcloud Proof Static Files",
+      "provider": "OVHcloud",
+      "regionCode": "GLOBAL",
+      "city": "Proof Static",
+      "countryCode": "GLOBAL",
+      "priority": 50,
+      "enabled": true,
+      "supportsDownload": true,
+      "supportsUpload": false,
+      "download": {
+        "url": "https://proof.ovh.net/files/100Mb.dat",
+        "method": "GET",
+        "timeoutSeconds": 30
+      },
+      "notes": "Official public static download test file. Useful as an extra fallback download source.",
+      "referenceURL": "https://proof.ovh.net/files/"
+    }
+  ]
+}
