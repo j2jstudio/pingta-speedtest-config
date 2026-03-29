@@ -21,7 +21,7 @@
       "supportsDownload": true,
       "supportsUpload": true,
       "download": {
-        "url": "https://speed.cloudflare.com/__down?bytes=100000000",
+        "url": "https://speed.cloudflare.com/__down?bytes=10000000",
         "method": "GET",
         "timeoutSeconds": 30
       },
